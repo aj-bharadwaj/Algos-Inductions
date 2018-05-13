@@ -1,8 +1,7 @@
 # Sorting Algorithm
 ## BubbleSort
-
-\\Ajay 108117005
 \\Bharadwaj 108117005
+\\ Ajay 108117005
 THE FOLLOWING IS THE ALGORITHM OF BUBBLE SORT, CONSIDER THE SET ( 5 1 4 2 8 )
 
 First Pass:
