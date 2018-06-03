@@ -1,0 +1,69 @@
+#include<ctype.h>
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+#include<stdio.h>
+void encrypt(char a[],int k,int size)
+{
+	for(int i=0;i<size;i++)
+	{
+		if(islower(a[i]))
+	{ 
+	if(((int)a[i]+k)>122)
+	a[i]=(a[i]+k-26);
+	else
+	a[i]=(a[i]+k);
+	}
+	else if(isupper(a[i]))
+	{ 
+	if(((int)a[i]+k)>90)
+	a[i]=(a[i]+k-26);
+	else
+	a[i]=(a[i]+k);
+	}
+}
+}
+void decrypt(char a[],int k,int size)
+{
+		for(int i=0;i<size;i++)
+	{
+		if(islower(a[i]))
+	{ 
+	if(((int)a[i]-k)<97)
+	a[i]=(a[i]-k+26);
+	else
+	a[i]=(a[i]-k);
+	}
+	else if(isupper(a[i]))
+	{ 
+	if(((int)a[i]-k)<65)
+	a[i]=(a[i]-k+26);
+	else
+	a[i]=(a[i]-k);
+	}
+}
+}
+
+void main()
+{
+char pl[10][100];
+char ci[10][100];
+int n,k;
+cin>>n>>k;
+for(int i=0;i<n;i++)
+gets(pl[i][]);
+for(i=0;i<n;i++)
+gets(ci[i][]);
+for(i=0;i<n;i++)
+{
+	encrypt(pl[i][],k,sizeof(pl[i][]));
+	puts(pl[i][]);
+	cout<<endl;
+	}	
+	for(i=0;i<n;i++)
+{
+	decrypt(ci[i][],k,sizeof(ci[i][]));
+	puts(ci[i][]);
+	cout<<endl;
+	}	
+}

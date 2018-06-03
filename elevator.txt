@@ -1,0 +1,54 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+     int curr,temp,h=0,l=0,d=0;
+     int req[9],up[9],down[9];
+     cin>>curr;
+     for(int i=0;i<9;i++)
+     cin>>req[i];
+     for(i=0;i<9;i++)
+     {
+                     if(req[i]>curr)
+                     {
+                         up[h]=req[i];
+                         h++;
+                     }
+                     else
+                     {
+                         down[l]=req[i];
+                         l++;
+                     }
+     }
+  for(i=0;i<sizeof(up)-1;i++)
+{
+for(int j=0;j<sizeof(up)-1-i;j++)
+{
+if(up[j]>up[j+1])
+{
+temp=up[j];
+up[j]=up[j+1];
+up[j+1]=temp;
+}
+}
+
+  for(i=0;i<sizeof(down)-1;i++)
+{
+for(j=0;j<sizeof(down)-1-i;j++)
+{
+if(down[j]<down[j+1])
+{
+temp=down[j];
+down[j]=down[j+1];
+down[j+1]=temp;
+}
+}
+
+d=(2*(up[sizeof(up)-1]-curr))+(curr-down[sizeof(down)-1]);
+cout<<curr<<"\t";
+for(i=0;i<sizeof(up);i++)
+cout<<up[i]<<"\t";
+for(i=0;i<sizeof(down);i++)
+cout<<down[i]<<"\t";
+cout<<"\nTotal distance: "<<d;
+}
